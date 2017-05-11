@@ -11,6 +11,11 @@ module.exports = {
 	module: {
 		rules: [
 			{
+				test: /index\.js$/,
+				exclude: /node_modules/,
+				loader: ['./loaders/luke-loader', './loaders/darth-loader']
+			},
+			{
 				test: /\.js$/,
 				exclude: /node_modules/,
 				loader: 'babel-loader',
