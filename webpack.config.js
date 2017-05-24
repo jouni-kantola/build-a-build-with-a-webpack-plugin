@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const PrependBuildTimePlugin = require('./plugins/prepend-build-time-plugin');
+const BuildingBlocksPlugin = require('./plugins/building-blocks-plugin');
 
 module.exports = {
 	entry: './src/index.js',
@@ -39,5 +39,5 @@ module.exports = {
 		]
 	},
 
-	plugins: [new PrependBuildTimePlugin()]
+	plugins: [new BuildingBlocksPlugin()]
 };
