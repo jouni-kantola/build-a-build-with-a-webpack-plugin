@@ -1,8 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const BuildingBlocksPlugin = require('./plugins/building-blocks-plugin');
-
 module.exports = {
 	entry: './src/index.js',
 	output: {
@@ -13,9 +11,9 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /index\.js$/,
+				test: /.jpg$/,
 				exclude: /node_modules/,
-				loader: ['./loaders/luke-loader', './loaders/darth-loader']
+				loader: ['./loaders/ascii-image-loader']
 			},
 			{
 				test: /\.js$/,
@@ -39,5 +37,5 @@ module.exports = {
 		]
 	},
 
-	plugins: [new BuildingBlocksPlugin()]
+	plugins: []
 };
