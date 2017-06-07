@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>templated-assets-webpack-plugin demo</title>
+  
+    <%- include('generated/styles.css.ejs') %>
+    <%- include('generated/__manifest.json.ejs') %>
+</head>
+
+<body>
+    <h1>Demo time!</h1>
+    <%- include('generated/runtime') %>
+    <%- include('generated/vendor') %>
+    <%- include('generated/app') %>
+</body>
+
+</html>
