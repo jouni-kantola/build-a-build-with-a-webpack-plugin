@@ -1,5 +1,5 @@
-import logo from '../images/logo.jpg';
-
-document.body.appendChild(logo());
+import("../images/logo.jpg").then(logo => {
+  document.body.appendChild(logo());
+});
 
 module.exports = () => "Nice to meet you!";

@@ -1,10 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
+const LifecycleHooksPlugin = require('./plugins/lifecycle-hooks-plugin');
 
 module.exports = {
 	entry: './src/index.js',
 	output: {
-		filename: '[name].bundle.js',
+		filename: '[name].[chunkhash].js',
 		path: path.join(__dirname, 'dist')
 	},
 
@@ -20,7 +21,8 @@ module.exports = {
 				exclude: /node_modules/,
 				loader: 'babel-loader',
 				options: {
-					presets: ['es2015']
+					presets: ['es2015'],
+					plugins: ['syntax-dynamic-import']
 				}
 			},
 			{
@@ -37,5 +39,5 @@ module.exports = {
 		]
 	},
 
-	plugins: []
+	plugins: [new LifecycleHooksPlugin()]
 };
